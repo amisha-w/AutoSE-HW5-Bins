@@ -3,25 +3,16 @@
  
  # `Lua to Python - AutoSE HW4 - Bins`
 
-[//]: # (![license]&#40;https://img.shields.io/github/license/tilaksatra/AutoSE-HW4-Grid&#41;)
-
-[//]: # (![Repo Size]&#40;https://img.shields.io/github/repo-size/tilaksatra/AutoSE-HW4-Grid&#41;)
-
-[//]: # (![Issues]&#40;https://img.shields.io/github/issues-closed-raw/tilaksatra/AutoSE-HW4-Grid?color=yellow&#41;)
-
-[//]: # (![Release]&#40;https://img.shields.io/github/v/release/tilaksatra/AutoSE-HW4-Grid?color=green&#41;)
-
-[//]: # (![Contributors]&#40;https://img.shields.io/github/contributors/tilaksatra/AutoSE-HW4-Grid?color=cyan&#41;)
-
-[//]: # (![PR]&#40;https://img.shields.io/github/issues-pr/tilaksatra/AutoSE-HW4-Grid?color=red&#41;)
-
-[//]: # (![PR Closed]&#40;https://img.shields.io/github/issues-pr-closed-raw/tilaksatra/AutoSE-HW4-Grid?color=red&#41;)
-
-[//]: # (![Pylint]&#40;https://img.shields.io/github/actions/workflow/status/tilaksatra/AutoSE-HW4-Grid/pylint.yml?label=PyLint&#41;)
-
-[//]: # (![Python Style Checker]&#40;https://img.shields.io/github/actions/workflow/status/tilaksatra/AutoSE-HW4-Grid/style_checker.yml?label=Python%20Style%20Checker&#41;)
-
-[//]: # (![Commit Activity]&#40;https://img.shields.io/github/commit-activity/w/tilaksatra/AutoSE-HW4-Grid?color=blue&#41;)
+![license](https://img.shields.io/github/license/amisha-w/AutoSE-HW5-Bins)
+![Repo Size](https://img.shields.io/github/repo-size/amisha-w/AutoSE-HW5-Bins)
+![Issues](https://img.shields.io/github/issues-closed-raw/amisha-w/AutoSE-HW5-Bins?color=yellow)
+<!-- ![Release](https://img.shields.io/github/v/release/amisha-w/AutoSE-HW5-Bins?color=green) -->
+![Contributors](https://img.shields.io/github/contributors/amisha-w/AutoSE-HW5-Bins?color=cyan)
+![PR](https://img.shields.io/github/issues-pr/amisha-w/AutoSE-HW5-Bins?color=red)
+![PR Closed](https://img.shields.io/github/issues-pr-closed-raw/amisha-w/AutoSE-HW5-Bins?color=red)
+![Pylint](https://img.shields.io/github/actions/workflow/status/amisha-w/AutoSE-HW5-Bins/pylint.yml?label=PyLint)
+![Python Style Checker](https://img.shields.io/github/actions/workflow/status/amisha-w/AutoSE-HW5-Bins/style_checker.yml?label=Python%20Style%20Checker)
+![Commit Activity](https://img.shields.io/github/commit-activity/w/amisha-w/AutoSE-HW5-Bins?color=blue)
 
 </div>
 This project translates a Lua application to Python application complete with CI/CD pipeline and demonstrates Test-Driven development. It is a homework repository for CSC 591 course. 
