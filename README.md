@@ -6,7 +6,7 @@
 ![license](https://img.shields.io/github/license/amisha-w/AutoSE-HW5-Bins)
 ![Repo Size](https://img.shields.io/github/repo-size/amisha-w/AutoSE-HW5-Bins)
 ![Issues](https://img.shields.io/github/issues-closed-raw/amisha-w/AutoSE-HW5-Bins?color=yellow)
-<!-- ![Release](https://img.shields.io/github/v/release/amisha-w/AutoSE-HW5-Bins?color=green) -->
+![Release](https://img.shields.io/github/v/release/amisha-w/AutoSE-HW5-Bins?color=green)
 ![Contributors](https://img.shields.io/github/contributors/amisha-w/AutoSE-HW5-Bins?color=cyan)
 ![PR](https://img.shields.io/github/issues-pr/amisha-w/AutoSE-HW5-Bins?color=red)
 ![PR Closed](https://img.shields.io/github/issues-pr-closed-raw/amisha-w/AutoSE-HW5-Bins?color=red)
