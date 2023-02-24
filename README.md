@@ -1,10 +1,12 @@
  <div align="center">
 
  
- # `Lua to Python - AutoSE HW4 - Bins`
+ # `Lua to Python - AutoSE HW5 - Bins`
 
 ![license](https://img.shields.io/github/license/amisha-w/AutoSE-HW5-Bins)
 ![Repo Size](https://img.shields.io/github/repo-size/amisha-w/AutoSE-HW5-Bins)
+[![codecov](https://codecov.io/gh/amisha-w/AutoSE-HW5-Bins/branch/main/graph/badge.svg?token=)](https://codecov.io/gh/amisha-w/AutoSE-HW5-Bins)<br/>
+![Test Cases](https://img.shields.io/github/actions/workflow/status/amisha-w/AutoSE-HW5-Bins/tests.yml?label=Test%20Cases)
 ![Issues](https://img.shields.io/github/issues-closed-raw/amisha-w/AutoSE-HW5-Bins?color=yellow)
 ![Release](https://img.shields.io/github/v/release/amisha-w/AutoSE-HW5-Bins?color=green)
 ![Contributors](https://img.shields.io/github/contributors/amisha-w/AutoSE-HW5-Bins?color=cyan)
