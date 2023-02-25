@@ -1,5 +1,4 @@
 import math
-from utils import rnd
 from constants import *
 
 class Num:
