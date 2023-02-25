@@ -1,5 +1,7 @@
-import math
+import math, sys
+sys.path.append("./src")
 from constants import *
+
 
 class Num:
     def __init__(self, at=0, txt=""):

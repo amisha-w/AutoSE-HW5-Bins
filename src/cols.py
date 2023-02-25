@@ -1,4 +1,5 @@
-import math
+import math , sys
+sys.path.append("./src")
 from sym import Sym
 from num import Num
 

@@ -1,3 +1,5 @@
+import sys
+sys.path.append("./src")
 from rows import *
 from cols import Col
 from utils import *

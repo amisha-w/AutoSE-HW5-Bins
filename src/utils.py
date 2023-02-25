@@ -1,4 +1,5 @@
-import sys, re, math, copy, json
+import sys, re, math, copy, json, sys
+sys.path.append("./src")
 from constants import *
 from pathlib import Path
 from sym import Sym
