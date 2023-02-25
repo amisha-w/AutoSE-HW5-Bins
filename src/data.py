@@ -1,58 +1,74 @@
 from rows import *
-from cols import COLS
+from cols import Col
 from utils import *
-from operator import itemgetter
 from constants import *
 
 class DATA:
     def __init__(self, src):
         self.rows = []
         self.cols = None
-        if isinstance(src, str):
+        
+        if type(src) == str:
             csv(src, self.add)
         else:
-            for row in src:
-                self.add(row)
+            for t in src:
+                self.add(t)
 
     def add(self, t):
+        '''
+        Adds row
+        '''
         if self.cols:
-            t = Row(t) if type(t) == list else t
+            if type(t) == list:
+                t = Row(t)
             self.rows.append(t)
             self.cols.add(t)
         else:
-            self.cols = COLS(t)
+            self.cols = Col(t)
+
+    def clone(self, init):
+            '''
+            Returns clone of data
+            '''
+            return copy.deepcopy(self)
 
     def stats(self, what, cols, nPlaces):
         def fun(_, col):
-            if what == 'div':
-                val = col.div()
-            else:
+            if what == 'mid':
                 val = col.mid()
+            else:
+                val = col.div()
             return col.rnd(val, nPlaces), col.txt
 
         return kap(cols or self.cols.y, fun)
 
     def dist(self, row1, row2, cols=None):
         n, d = 0, 0
-        for col in cols or self.cols.x:
-            n = n + 1
-            d = d + col.dist(row1.cells[col.at], row2.cells[col.at]) ** options['p']
-        return (d / n) ** (1 / options['p'])
+        c = cols or self.cols.x
 
-    def clone(self, init={}):
-        data = DATA([self.cols.names])
-        _ = list(map(data.add, init))
-        return data
+        for col in c:
+            n += 1
+            d += col.dist(row1.cells[col.at], row2.cells[col.at]) ** options['p']
+
+        return (d/n) ** (1 / options['p'])
+
 
     def around(self, row1, rows=None, cols=None):
-        def function(row2):
-            return {'row': row2, 'dist': self.dist(row1, row2, cols)}
 
-        return sorted(list(map(function, rows or self.rows)), key=itemgetter('dist'))
+        if rows is None: rows = self.rows
+
+        def function(row2):
+            return {"row": row2, "dist": self.dist(row1, row2, cols)}
+
+        mapped = map(function, rows)
+        return sorted(mapped, key=lambda x: x["dist"])
 
     def half(self, rows=None, cols=None, above=None):
         def dist(row1, row2):
             return self.dist(row1, row2, cols)
+        
+        def project(row):
+            return {'row': row, 'dist': cosine(dist(row, A), dist(row, B), c)}
 
         rows = rows or self.rows
         some = many(rows, options['Halves'])
@@ -61,22 +77,20 @@ class DATA:
         c = dist(A, B)
         left, right = [], []
 
-        def project(row):
-            return {'row': row, 'dist': cosine(dist(row, A), dist(row, B), c)}
-
-        for n, tmp in enumerate(sorted(list(map(project, rows)), key=itemgetter('dist'))):
+        for n, _ in enumerate(sorted(list(map(project, rows)), key=itemgetter('dist'))):
             if n < len(rows) // 2:
-                left.append(tmp['row'])
-                mid = tmp['row']
+                left.append(_['row'])
+                mid = _['row']
             else:
-                right.append(tmp['row'])
+                right.append(_['row'])
         return left, right, A, B, mid, c
 
     def cluster(self, rows=None, min=None, cols=None, above=None):
         rows = rows or self.rows
-        min = min or len(rows) ** options['min']
+        min = min or (len(rows) ** options['min'])
         cols = cols or self.cols.x
         node = {'data': self.clone(rows)}
+
         if len(rows) >= 2 * min:
             left, right, node['A'], node['B'], node['mid'], _ = self.half(rows, cols, above)
             node['left'] = self.cluster(left, min, cols, node['A'])
@@ -88,8 +102,9 @@ class DATA:
         for col in ys:
             x = col.norm(row1.cells[col.at])
             y = col.norm(row2.cells[col.at])
-            s1 = s1 - math.exp(col.w * (x - y) / len(ys))
-            s2 = s2 - math.exp(col.w * (y - x) / len(ys))
+            s1 -= math.exp(col.w * (x - y) / len(ys))
+            s2 -= math.exp(col.w * (y - x) / len(ys))
+
         return s1 / len(ys) < s2 / len(ys)
 
     def tree(self, rows=None, min=None, cols=None, above=None):
@@ -97,6 +112,7 @@ class DATA:
         min = min or len(rows) ** options['min']
         cols = cols or self.cols.x
         node = {'data': self.clone(rows)}
+        
         if len(rows) >= 2 * min:
             left, right, node['A'], node['B'], node['mid'], _ = self.half(rows, cols, above)
             node['left'] = self.tree(left, min, cols, node['A'])

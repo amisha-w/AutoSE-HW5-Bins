@@ -2,7 +2,7 @@ import sys
 
 MAX_VALUE = sys.maxsize
 MIN_VALUE = -1 * sys.maxsize
-help = '''USAGE: python main.py  [OPTIONS] [-g ACTION]
+help = '''USAGE: python3 testengine.py  [OPTIONS] [-g ACTION]
 
 OPTIONS:
   -b  --bins    initial number of bins       = 16

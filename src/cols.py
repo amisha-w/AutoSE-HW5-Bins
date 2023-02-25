@@ -2,7 +2,10 @@ import math
 from sym import Sym
 from num import Num
 
-class COLS:
+class Col:
+    '''
+    Create Num or Sym for non-skipped columns Columns
+    '''
     def __init__(self, t):
         self.names = t
         self.all = []
@@ -10,22 +13,25 @@ class COLS:
         self.y = []
         self.klass = None
 
-        for col_name in t:
-            if col_name[0].isupper():
-                col = Num(t.index(col_name), col_name)
+        for column in t:
+            if column[0].isupper():
+                col = Num(t.index(column), column)
             else:
-                col = Sym(t.index(col_name), col_name)
+                col = Sym(t.index(column), column)
             self.all.append(col)
 
-            if not col_name[-1] == "X":
-                if "-" in col_name or "+" in col_name or "!" in col_name:
+            if not column[-1] == "X":
+                if "-" in column or "+" in column or "!" in column:
                     self.y.append(col)
                 else:
                     self.x.append(col)
-                if "!" in col_name:
+                if "!" in column:
                     self.klass=col
 
     def add(self, row):
-        for t in [self.x, self.y]:
-            for col in t:
+        '''
+        Add row to columns
+        '''
+        for list in [self.x, self.y]:
+            for col in list:
                 col.add(row.cells[col.at])
