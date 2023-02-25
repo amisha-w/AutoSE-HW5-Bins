@@ -3,6 +3,7 @@
  
  # `Lua to Python - AutoSE HW5 - Bins`
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7677645.svg)](https://doi.org/10.5281/zenodo.7677645)
 ![license](https://img.shields.io/github/license/amisha-w/AutoSE-HW5-Bins)
 ![Repo Size](https://img.shields.io/github/repo-size/amisha-w/AutoSE-HW5-Bins)
 [![codecov](https://codecov.io/gh/amisha-w/AutoSE-HW5-Bins/branch/main/graph/badge.svg?token=)](https://codecov.io/gh/amisha-w/AutoSE-HW5-Bins)<br/>
