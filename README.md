@@ -36,6 +36,14 @@ The rules listed below are to be followed by the ones who will be contributing t
 
 - It is recommended to create branches and start the changes in that branch and also delete the branch after commiting the code to avoid stale branches.
 
+## Wish to contribute?
+- Please refer the file [CONTRIBUTING.md](https://github.com/amisha-w//AutoSE-HW1-Lua/blob/main/CONTRIBUTING.md) in the repository that guides new contributors on how they can help improve [LuaToPython](https://github.com/amisha-w//AutoSE-HW1-Lua)
+- This file is for:
+  - _Project Owners_ - Initiaters and maintainers of the file.
+  - _Project contributors_ - People who think existing features can be simplified or new features can be added to improve the project.
+  - _Users_ - Customers who want to clone the repository and use it create their own project.
+
+
 ## Contributors
   
 <table>
