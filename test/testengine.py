@@ -54,12 +54,12 @@ def test_sym():
     print(sym.mid(), rnd(sym.div()))
     return 1.379 == rnd(sym.div())
 
-def no_of_chars_in_file(t):
+def get_num_char(t):
     global n
     n += len(t)
 
 def test_csv():
-    csv(options['file'], no_of_chars_in_file)
+    csv(options['file'], get_num_char)
     return n == 3192
 
 def test_data():
@@ -98,7 +98,7 @@ def test_dist():
     num  = Num()
     for row in data.rows:
         num.add(data.dist(row, data.rows[1]))
-    print({'lo' : num.lo, 'hi' : num.hi, 'mid' : rnd(num.mid()), 'div' : rnd(num.div())})
+    print('lo:' , num.lo, 'hi:' , num.hi, 'mid: ', rnd(num.mid()), 'div:' , rnd(num.div()))
 
 def test_half():
     data = DATA(options['file'])
